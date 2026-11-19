@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI (PS5)</title>
+<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: roadmap, missables, cited guides and saved progress.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-text">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline guide</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="lede">All 55 official trophies — names, descriptions and grades as PlayStation publishes them — with a guide to each in our own words, a road to the platinum, and a tracker that remembers your progress.</p>
+  </div>
+  <div class="progress-card" id="progressCard" aria-live="polite">
+    <p class="big-count"><span id="earnedCount">0</span><span class="of"> / 55</span></p>
+    <p class="progress-label">trophies earned</p>
+    <div class="meter"><div class="meter-fill" id="meterFill"></div></div>
+    <p class="grade-counts" id="gradeCounts"></p>
+    <p class="platinum-note" id="platinumNote">Platinum: 0 of 54 others earned</p>
+    <p class="next-up" id="nextUp"></p>
+  </div>
+</header>
+<noscript><p class="noscript-note">This guide needs JavaScript to load its trophy list and remember your progress. Please enable it and reload.</p></noscript>
+
+<nav class="tabs" aria-label="Sections">
+  <button type="button" class="tab active" data-view="guide" id="tabGuide">Guide &amp; tracker</button>
+  <button type="button" class="tab" data-view="roadmap" id="tabRoadmap">Platinum roadmap</button>
+  <button type="button" class="tab" data-view="missable" id="tabMissable">Missables <span class="pill" id="missablePill">10</span></button>
+</nav>
+
+<main>
+  <section id="view-guide" class="view">
+    <div class="controls" role="search">
+      <label class="search-label">Search <input id="search" type="search" placeholder="Name, description or guide…" autocomplete="off"></label>
+      <fieldset class="kind-filters" id="kindFilters" aria-label="Filter by kind">
+        <legend>Kind</legend>
+        <button type="button" class="kind-btn active" data-kind="all">All kinds</button>
+        <button type="button" class="kind-btn" data-kind="story">Story</button>
+        <button type="button" class="kind-btn" data-kind="missable">Missable</button>
+        <button type="button" class="kind-btn" data-kind="collectibles">Collectibles</button>
+        <button type="button" class="kind-btn" data-kind="activities">Activities</button>
+        <button type="button" class="kind-btn" data-kind="online">Online</button>
+      </fieldset>
+      <label>Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="earnedOnly"> Earned only</label>
+      <label class="check"><input type="checkbox" id="spoilerToggle"> Hide story spoilers</label>
+    </div>
+    <p class="result-line" id="resultLine"></p>
+    <p class="howto">Tick a trophy’s box when you earn it — it stays ticked in this browser. Open a card’s guide for what to do and what it cites; the Missables tab lists the ten trophies to read before you play.</p>
+    <div class="trophy-list" id="trophyList"></div>
+  </section>
+
+  <section id="view-roadmap" class="view hidden">
+    <h2>Road to the platinum</h2>
+    <p>Seven stages, built from the official descriptions. Play the story first, then the character strands, then activities and open-world crime, and finish with collectibles and cleanup. The platinum pops when the other 54 are done.</p>
+    <ol class="roadmap" id="roadmapList"></ol>
+  </section>
+
+  <section id="view-missable" class="view hidden">
+    <h2>Missable trophies — read before you play</h2>
+    <p>These ten need a specific setup or a one-time chance. The story missions themselves are replayable, so the real danger is the one-shot moments below. Tick them off as you do them, and save before each attempt.</p>
+    <div class="trophy-list" id="missableList"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="save-row">
+    <button type="button" id="exportBtn">Export progress</button>
+    <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+    <button type="button" id="resetBtn" class="quiet">Reset progress</button>
+    <span class="save-state" id="saveState">Progress is saved in this browser.</span>
+  </div>
+  <h2>Sources &amp; honesty note</h2>
+  <p>Official names, descriptions and grades come from the official trophy list as published on <a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase</a> and <a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles</a> (28 of the 55 are hidden on PlayStation until earned). Every guide on this page is written in our own words from those descriptions. Grand Theft Auto VI had not released when this guide was written, so nothing beyond the official description is stated as fact: where a guide says “inferred”, it is our reading of the description, not a confirmed step. Counts such as 42 Shooting Range challenges or 14 drone-race locations are PSN’s own tracked targets. No Rockstar artwork, logo or game footage is used anywhere here — the look is our own.</p>
+  <p class="fineprint">Works fully offline. Your checklist lives in this browser’s localStorage and is never sent anywhere; export and import are local files. Not affiliated with Rockstar Games or PlayStation.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
