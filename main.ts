@@ -9,13 +9,45 @@
 // Run it locally with: mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 // In the grader, MAKEFUN_OUTPUT_DIR is unset and /output is used instead.
 
-import { cpSync, existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildDossier } from './vendor/makefun-frontend.ts';
 
 const repoRoot = fileURLToPath(new URL('.', import.meta.url));
 const outputDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
+
+// Pre-flight validation: fail loudly before copying anything, so a broken
+// hand-in is never produced silently from a missing or corrupt source file.
+const indexPath = join(repoRoot, 'app', 'index.html');
+if (!existsSync(indexPath)) {
+  throw new Error('Pre-flight check failed: app/index.html is missing at ' + indexPath);
+}
+
+const trophiesPath = join(repoRoot, 'app', 'data', 'trophies.json');
+let trophiesData: unknown;
+try {
+  trophiesData = JSON.parse(readFileSync(trophiesPath, 'utf8'));
+} catch (err) {
+  throw new Error(
+    'Pre-flight check failed: app/data/trophies.json is missing or not valid JSON at ' +
+      trophiesPath +
+      ' (' +
+      (err instanceof Error ? err.message : String(err)) +
+      ')',
+  );
+}
+if (
+  typeof trophiesData !== 'object' ||
+  trophiesData === null ||
+  !Array.isArray((trophiesData as { trophies?: unknown }).trophies) ||
+  (trophiesData as { trophies: unknown[] }).trophies.length === 0
+) {
+  throw new Error(
+    'Pre-flight check failed: app/data/trophies.json does not contain a non-empty "trophies" array at ' +
+      trophiesPath,
+  );
+}
 
 mkdirSync(outputDir, { recursive: true });
 cpSync(join(repoRoot, 'app'), join(outputDir, 'app'), { recursive: true });

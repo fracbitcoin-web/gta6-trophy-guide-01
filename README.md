@@ -24,4 +24,19 @@ It works fully offline once loaded.
 - Stage 6: Special events and seasonal content
 - Stage 7: Platinum trophy and final achievement
 
+## Missable trophies at a glance
+
+Ten of the 55 trophies are flagged missable in the data, so they deserve a deliberate attempt rather than being left to chance. Most of them only fail per attempt and can be retried, but a little planning saves a lot of replays. In roadmap order:
+
+- **Stage 4 — Fair Game:** hunt the unique animal for Bret; save before taking the shot, since there may be only one of it.
+- **Stage 4 — Gunslinger:** take down five enemies in a single use of Combat Focus — set up a group of at least five before triggering it.
+- **Stage 4 — Let's Go Bowling:** follow through properly on your throw at the Kolt & Associates bowling alley; rushing the motion wastes the attempt.
+- **Stage 4 — Ten Pin:** knock someone over with a melee attack from a moving vehicle — pick a slow pass on a busy street, not a high-speed run.
+- **Stage 5 — Hot Together:** lose a 4-star wanted level with your partner beside you; plan a quiet hiding spot before building the heat.
+- **Stage 5 — Retail Therapy:** rob three shops back-to-back with your partner without losing your wanted level — the chain breaks if the heat drops between shops.
+- **Stage 5 — Catch Me If You Can:** make an unscheduled departure from VCIA airport; leave by a route the game never scheduled.
+- **Stage 5 — Sneakthief:** rob a jewelry store without being detected at any point — one sighting ends the attempt, so go slow and quiet.
+- **Stage 5 — Capital Offense:** smash your way out of a vehicle showroom in a car, straight through the glass.
+- **Stage 6 — Bad Luck, I Guess:** succeed on the second try — it only pops after a failed first attempt followed by a success, so keep it in mind the next time a retryable activity beats you.
+
 Sources for the official trophy list: [Exophase](https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/) and [PSNProfiles](https://psnprofiles.com/trophies/43531-grand-theft-auto-vi).
